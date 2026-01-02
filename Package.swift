@@ -3,24 +3,25 @@
 import PackageDescription
 
 let package = Package(
-    name: "MyLibrary",
+    name: "Openbase",
     platforms: [
         .iOS(.v17),
-        .macOS(.v14)
+        .macOS(.v14),
     ],
     products: [
         .library(
-            name: "MyLibrary",
-            targets: ["MyLibrary"]),
+            name: "Openbase",
+            targets: ["Openbase"]
+        ),
     ],
     targets: [
         .target(
-            name: "MyLibrary",
-            path: "Sources/MyLibrary"
+            name: "Openbase",
+            path: "Sources/Openbase"
         ),
         .testTarget(
-            name: "MyLibraryTests",
-            dependencies: ["MyLibrary"]
+            name: "OpenbaseTests",
+            dependencies: ["Openbase"]
         ),
     ]
 )

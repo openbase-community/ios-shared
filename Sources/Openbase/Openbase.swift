@@ -1,4 +1,4 @@
-// MyLibrary - Swift Package for django-allauth Authentication
+// Openbase - Swift Package for Openbase Authentication
 // A comprehensive authentication library for iOS apps with SwiftUI support
 
 import SwiftUI
@@ -13,7 +13,7 @@ public typealias TokenManager = SessionTokenManager
 
 // MARK: - Library Configuration
 
-/// Configuration for the MyLibrary authentication package
+/// Configuration for the Openbase authentication package
 public struct AllAuthConfiguration {
     /// The base URL for the allauth API (e.g., "https://api.example.com/_allauth/app/v1")
     public let baseURL: URL
@@ -115,6 +115,6 @@ public typealias Pending = PendingFlow
 /// Library version information
 public enum LibraryInfo {
     public static let version = "1.0.0"
-    public static let name = "MyLibrary"
+    public static let name = "Openbase"
     public static let minimumIOSVersion = "17.0"
 }
