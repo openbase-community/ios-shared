@@ -14,7 +14,7 @@ public struct EmailField: View {
         self.errors = errors
     }
 
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(label)
                 .font(.subheadline)
@@ -44,7 +44,7 @@ public struct UsernameField: View {
         self.errors = errors
     }
 
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(label)
                 .font(.subheadline)
@@ -75,7 +75,7 @@ public struct PasswordField: View {
         self.fieldName = fieldName
     }
 
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(label)
                 .font(.subheadline)
@@ -98,7 +98,7 @@ public struct InputField: View {
     let fieldName: String
     var keyboardType: UIKeyboardType = .default
 
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(label)
                 .font(.subheadline)
@@ -127,7 +127,7 @@ public struct CodeField: View {
         self.fieldName = fieldName
     }
 
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(label)
                 .font(.subheadline)

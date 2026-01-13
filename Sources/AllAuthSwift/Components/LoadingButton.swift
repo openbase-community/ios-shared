@@ -10,7 +10,7 @@ public struct LoadingButton<Label: View>: View {
 
     @State private var isExecuting = false
 
-    var body: some View {
+    public var body: some View {
         Button {
             guard !isLoading && !isExecuting else { return }
             Task {
@@ -39,7 +39,7 @@ public struct PrimaryButton: View {
     let isLoading: Bool
     let action: () async -> Void
 
-    var body: some View {
+    public var body: some View {
         LoadingButton(action: action, isLoading: isLoading) {
             Text(title)
                 .fontWeight(.semibold)
@@ -55,7 +55,7 @@ public struct SecondaryButton: View {
     let isLoading: Bool
     let action: () async -> Void
 
-    var body: some View {
+    public var body: some View {
         LoadingButton(action: action, isLoading: isLoading) {
             Text(title)
         }
@@ -70,7 +70,7 @@ public struct DestructiveButton: View {
     let isLoading: Bool
     let action: () async -> Void
 
-    var body: some View {
+    public var body: some View {
         LoadingButton(action: action, isLoading: isLoading) {
             Text(title)
                 .fontWeight(.semibold)
@@ -86,7 +86,7 @@ public struct LinkButton: View {
     let title: String
     let action: () -> Void
 
-    var body: some View {
+    public var body: some View {
         Button(title, action: action)
             .font(.subheadline)
     }

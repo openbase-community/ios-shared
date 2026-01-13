@@ -6,11 +6,10 @@ import Combine
 /// Custom property wrapper for accessing auth context
 /// Equivalent to useAuth() hook in React
 @propertyWrapper
-public
 public struct UseAuth: DynamicProperty {
     @EnvironmentObject private var authContext: AuthContext
 
-    var wrappedValue: JSON? {
+    public var wrappedValue: JSON? {
         return authContext.auth
     }
 }
@@ -18,11 +17,10 @@ public struct UseAuth: DynamicProperty {
 /// Property wrapper for accessing current user
 /// Equivalent to useUser() hook in React
 @propertyWrapper
-public
 public struct UseUser: DynamicProperty {
     @EnvironmentObject private var authContext: AuthContext
 
-    var wrappedValue: JSON? {
+    public var wrappedValue: JSON? {
         return authContext.user
     }
 }
@@ -30,11 +28,10 @@ public struct UseUser: DynamicProperty {
 /// Property wrapper for accessing config
 /// Equivalent to useConfig() hook in React
 @propertyWrapper
-public
 public struct UseConfig: DynamicProperty {
     @EnvironmentObject private var authContext: AuthContext
 
-    var wrappedValue: JSON? {
+    public var wrappedValue: JSON? {
         return authContext.config
     }
 }
@@ -45,7 +42,7 @@ public struct UseConfig: DynamicProperty {
 public struct AuthenticatedViewModifier: ViewModifier {
     @EnvironmentObject var authContext: AuthContext
 
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         if authContext.isAuthenticated {
             content
         }
@@ -56,7 +53,7 @@ public struct AuthenticatedViewModifier: ViewModifier {
 public struct AnonymousViewModifier: ViewModifier {
     @EnvironmentObject var authContext: AuthContext
 
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         if !authContext.isAuthenticated {
             content
         }

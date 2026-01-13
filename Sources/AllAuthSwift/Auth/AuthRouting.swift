@@ -159,7 +159,7 @@ public struct AuthRoutingContainer<AuthenticatedContent: View, AnonymousContent:
         self.anonymousContent = anonymous
     }
 
-    var body: some View {
+    public var body: some View {
         Group {
             if authContext.isLoading {
                 ProgressView("Loading...")
@@ -185,7 +185,7 @@ public struct AuthRequiredModifier: ViewModifier {
     @EnvironmentObject var authContext: AuthContext
     @EnvironmentObject var navigationManager: AuthNavigationManager
 
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         Group {
             if authContext.isAuthenticated {
                 content
@@ -204,7 +204,7 @@ public struct AnonymousRequiredModifier: ViewModifier {
     @EnvironmentObject var authContext: AuthContext
     @EnvironmentObject var navigationManager: AuthNavigationManager
 
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         Group {
             if !authContext.isAuthenticated {
                 content
@@ -237,7 +237,7 @@ public struct FlowBasedNavigator: View {
     @EnvironmentObject var authContext: AuthContext
     @EnvironmentObject var navigationManager: AuthNavigationManager
 
-    var body: some View {
+    public var body: some View {
         Color.clear
             .onAppear {
                 navigationManager.handlePendingFlows()

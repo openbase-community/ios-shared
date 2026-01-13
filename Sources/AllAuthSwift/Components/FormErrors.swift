@@ -37,7 +37,7 @@ public struct FormErrors: View {
         }
     }
 
-    var body: some View {
+    public var body: some View {
         ForEach(relevantErrors, id: \.self) { error in
             Text(error)
                 .font(.caption)
@@ -62,7 +62,7 @@ public struct AllFormErrors: View {
         }
     }
 
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             ForEach(Array(allErrors.enumerated()), id: \.offset) { _, error in
                 HStack(alignment: .top, spacing: 4) {
@@ -85,7 +85,7 @@ public struct ErrorAlert: View {
     let message: String
     var onDismiss: (() -> Void)?
 
-    var body: some View {
+    public var body: some View {
         HStack {
             Image(systemName: "exclamationmark.triangle.fill")
                 .foregroundColor(.red)
@@ -113,7 +113,7 @@ public struct SuccessAlert: View {
     let message: String
     var onDismiss: (() -> Void)?
 
-    var body: some View {
+    public var body: some View {
         HStack {
             Image(systemName: "checkmark.circle.fill")
                 .foregroundColor(.green)
