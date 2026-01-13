@@ -26,7 +26,7 @@ public struct ProviderSignupView: View {
         return authContext.provider(byId: providerId)?["name"].string ?? providerId
     }
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Complete Your Signup",
             subtitle: "You're signing up with \(providerName). Please provide an email address."

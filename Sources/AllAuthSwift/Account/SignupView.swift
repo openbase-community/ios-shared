@@ -17,7 +17,7 @@ public struct SignupView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         AuthForm(title: "Create Account", subtitle: "Enter your details to get started.") {
             VStack(spacing: 16) {
                 if authContext.emailAuthEnabled {

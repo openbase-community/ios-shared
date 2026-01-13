@@ -16,7 +16,7 @@ public struct RequestLoginCodeView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Sign In with Code",
             subtitle: "We'll send a one-time code to your email."
@@ -101,11 +101,11 @@ public struct ConfirmLoginCodeView: View {
 
     private let client = AllAuthClient.shared
 
-    init(email: String? = nil) {
+    public init(email: String? = nil) {
         self.email = email
     }
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Enter Code",
             subtitle: email != nil

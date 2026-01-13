@@ -19,7 +19,7 @@ public struct AddWebAuthnView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         ScrollView {
             VStack(spacing: 24) {
                 if showSuccess {
@@ -160,7 +160,7 @@ public struct ListWebAuthnView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         List {
             ForEach(Array(authenticators.enumerated()), id: \.offset) { _, auth in
                 NavigationLink {
@@ -264,7 +264,7 @@ public struct UpdateWebAuthnView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         List {
             Section("Name") {
                 TextField("Security Key Name", text: $name)
@@ -393,7 +393,7 @@ public struct AuthenticateWebAuthnView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Security Key",
             subtitle: "Use your security key to sign in."
@@ -466,7 +466,7 @@ public struct ReauthenticateWebAuthnView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Verify Identity",
             subtitle: "Use your security key to verify your identity."

@@ -9,6 +9,7 @@ import Combine
 public struct UseAuth: DynamicProperty {
     @EnvironmentObject private var authContext: AuthContext
 
+
     public var wrappedValue: JSON? {
         return authContext.auth
     }
@@ -20,6 +21,7 @@ public struct UseAuth: DynamicProperty {
 public struct UseUser: DynamicProperty {
     @EnvironmentObject private var authContext: AuthContext
 
+
     public var wrappedValue: JSON? {
         return authContext.user
     }
@@ -30,6 +32,7 @@ public struct UseUser: DynamicProperty {
 @propertyWrapper
 public struct UseConfig: DynamicProperty {
     @EnvironmentObject private var authContext: AuthContext
+
 
     public var wrappedValue: JSON? {
         return authContext.config

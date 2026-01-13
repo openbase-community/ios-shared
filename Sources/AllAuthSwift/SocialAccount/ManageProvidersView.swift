@@ -21,7 +21,7 @@ public struct ManageProvidersView: View {
         }
     }
 
-    var body: some View {
+    public var body: some View {
         List {
             // Connected accounts
             Section {
@@ -128,7 +128,7 @@ struct ConnectedProviderRow: View {
         account["display"].stringValue
     }
 
-    var body: some View {
+    public var body: some View {
         HStack {
             providerIcon
                 .font(.title2)

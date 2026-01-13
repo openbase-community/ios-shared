@@ -40,7 +40,7 @@ public struct MFAOverviewView: View {
         )
     }
 
-    var body: some View {
+    public var body: some View {
         List {
             // TOTP Section
             Section {

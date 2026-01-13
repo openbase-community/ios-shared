@@ -26,7 +26,7 @@ struct AppleSignInButton: View {
         self.onError = onError
     }
 
-    var body: some View {
+    public var body: some View {
         SignInWithAppleButton(
             onRequest: { request in
                 request.requestedScopes = [.fullName, .email]

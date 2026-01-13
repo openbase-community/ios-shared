@@ -30,7 +30,7 @@ public struct VerifyEmailView: View {
         self.key = key
     }
 
-    var body: some View {
+    public var body: some View {
         AuthForm(title: "Verify Email") {
             VStack(spacing: 24) {
                 switch verificationStatus {
@@ -201,7 +201,7 @@ public struct VerifyEmailByCodeView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Verify Email",
             subtitle: "Enter the verification code sent to your email."
@@ -249,7 +249,7 @@ public struct VerificationEmailSentView: View {
         return authContext.user?["email"].string
     }
 
-    var body: some View {
+    public var body: some View {
         AuthForm(title: "Verify Your Email") {
             VStack(spacing: 24) {
                 Image(systemName: "envelope.badge.fill")

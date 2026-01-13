@@ -13,7 +13,7 @@ public struct LogoutView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 24) {
             Image(systemName: "rectangle.portrait.and.arrow.right")
                 .font(.system(size: 60))
@@ -63,7 +63,7 @@ public struct LogoutView: View {
 public struct LogoutButton: View {
     @State private var showLogoutSheet = false
 
-    var body: some View {
+    public var body: some View {
         Button {
             showLogoutSheet = true
         } label: {

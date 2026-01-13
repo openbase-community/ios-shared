@@ -11,7 +11,7 @@ public struct ProviderListView: View {
     let process: AuthProcess
     var onProviderSelected: ((JSON) -> Void)?
 
-    init(process: AuthProcess = .login, onProviderSelected: ((JSON) -> Void)? = nil) {
+    public init(process: AuthProcess = .login, onProviderSelected: ((JSON) -> Void)? = nil) {
         self.process = process
         self.onProviderSelected = onProviderSelected
     }
@@ -20,7 +20,7 @@ public struct ProviderListView: View {
         return authContext.socialProviders
     }
 
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 12) {
             ForEach(Array(providers.enumerated()), id: \.offset) { _, provider in
                 ProviderButton(provider: provider) {
@@ -44,7 +44,7 @@ struct ProviderButton: View {
         provider["name"].stringValue
     }
 
-    var body: some View {
+    public var body: some View {
         Button(action: action) {
             HStack {
                 providerIcon

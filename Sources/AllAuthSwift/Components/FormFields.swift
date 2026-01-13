@@ -154,7 +154,7 @@ struct AuthForm<Content: View>: View {
     var subtitle: String?
     @ViewBuilder let content: () -> Content
 
-    var body: some View {
+    public var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 VStack(alignment: .leading, spacing: 8) {
@@ -181,7 +181,7 @@ struct FormSection<Content: View>: View {
     let title: String?
     @ViewBuilder let content: () -> Content
 
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             if let title = title {
                 Text(title)

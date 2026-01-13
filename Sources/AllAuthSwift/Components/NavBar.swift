@@ -8,7 +8,7 @@ public struct NavBar: View {
     @EnvironmentObject var authContext: AuthContext
     @EnvironmentObject var navigationManager: AuthNavigationManager
 
-    var body: some View {
+    public var body: some View {
         HStack {
             // Logo/Title
             Text("AllAuth")
@@ -100,34 +100,11 @@ public struct NavBar: View {
     }
 }
 
-/// Tab bar for main navigation
-public struct MainTabBar: View {
-    @EnvironmentObject var authContext: AuthContext
-
-    var body: some View {
-        TabView {
-            NavigationStack {
-                HomeView()
-            }
-            .tabItem {
-                Label("Home", systemImage: "house")
-            }
-
-            NavigationStack {
-                SettingsView()
-            }
-            .tabItem {
-                Label("Settings", systemImage: "gear")
-            }
-        }
-    }
-}
-
 /// Settings view
 public struct SettingsView: View {
     @EnvironmentObject var authContext: AuthContext
 
-    var body: some View {
+    public var body: some View {
         List {
             Section("Account") {
                 NavigationLink {

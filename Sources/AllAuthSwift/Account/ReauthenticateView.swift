@@ -14,7 +14,7 @@ public struct ReauthenticateView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Confirm Your Identity",
             subtitle: "For security, please enter your password to continue."
@@ -61,7 +61,7 @@ public struct ReauthenticateFlowView: View {
     @EnvironmentObject var authContext: AuthContext
     @EnvironmentObject var navigationManager: AuthNavigationManager
 
-    var body: some View {
+    public var body: some View {
         Group {
             if authContext.isPending(flow: .mfaReauthenticate) {
                 // MFA reauthentication required
@@ -96,7 +96,7 @@ public struct MFAReauthenticateFlowView: View {
         return flow["types"].arrayValue.map { $0.stringValue }
     }
 
-    var body: some View {
+    public var body: some View {
         Group {
             if let method = selectedMethod {
                 methodView(for: method)

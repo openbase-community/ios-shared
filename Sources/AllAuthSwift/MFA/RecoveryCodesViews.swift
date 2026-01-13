@@ -17,7 +17,7 @@ public struct GenerateRecoveryCodesView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         ScrollView {
             VStack(spacing: 24) {
                 if codes.isEmpty {
@@ -150,7 +150,7 @@ public struct RecoveryCodesView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         List {
             Section {
                 if isLoading {
@@ -232,7 +232,7 @@ public struct AuthenticateRecoveryCodesView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Recovery Code",
             subtitle: "Enter one of your recovery codes to sign in."
@@ -297,7 +297,7 @@ public struct ReauthenticateRecoveryCodesView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Verify Identity",
             subtitle: "Enter one of your recovery codes to verify your identity."

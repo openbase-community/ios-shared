@@ -22,7 +22,7 @@ public struct SessionsView: View {
         sessions.filter { !$0["is_current"].boolValue }
     }
 
-    var body: some View {
+    public var body: some View {
         List {
             // Current session
             if let current = currentSession {
@@ -180,7 +180,7 @@ struct SessionRow: View {
         }
     }
 
-    var body: some View {
+    public var body: some View {
         HStack(spacing: 12) {
             Image(systemName: deviceInfo.icon)
                 .font(.title2)

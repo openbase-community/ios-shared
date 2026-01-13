@@ -17,7 +17,7 @@ public struct ChangeEmailView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         List {
             // Existing email addresses
             Section("Your Email Addresses") {
@@ -158,7 +158,7 @@ struct EmailAddressRow: View {
     var isPrimary: Bool { email["primary"].boolValue }
     var isVerified: Bool { email["verified"].boolValue }
 
-    var body: some View {
+    public var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text(emailString)

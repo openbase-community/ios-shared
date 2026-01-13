@@ -16,7 +16,7 @@ public struct RequestPasswordResetView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Reset Password",
             subtitle: "Enter your email address and we'll send you a link to reset your password."
@@ -86,7 +86,7 @@ public struct ConfirmPasswordResetCodeView: View {
     @State private var isLoading = false
     @State private var response: JSON?
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Enter Reset Code",
             subtitle: "Enter the code from the password reset email."
@@ -143,7 +143,7 @@ public struct ResetPasswordView: View {
         self.key = key
     }
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Set New Password",
             subtitle: userEmail != nil ? "Choose a new password for \(userEmail!)" : "Choose a new password for your account."

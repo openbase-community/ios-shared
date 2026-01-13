@@ -18,7 +18,7 @@ public struct MFAAuthenticateFlowView: View {
         return flow["types"].arrayValue.map { $0.stringValue }
     }
 
-    var body: some View {
+    public var body: some View {
         Group {
             if let method = selectedMethod {
                 methodView(for: method)
@@ -167,7 +167,7 @@ public struct MFATrustDeviceView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 24) {
             Image(systemName: "checkmark.shield.fill")
                 .font(.system(size: 60))

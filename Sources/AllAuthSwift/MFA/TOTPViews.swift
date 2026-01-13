@@ -27,7 +27,7 @@ public struct ActivateTOTPView: View {
         totpData?["data"]["totp"]["secret"].string
     }
 
-    var body: some View {
+    public var body: some View {
         ScrollView {
             VStack(spacing: 24) {
                 if isLoading {
@@ -190,7 +190,7 @@ public struct DeactivateTOTPView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 24) {
             Image(systemName: "exclamationmark.triangle.fill")
                 .font(.system(size: 60))
@@ -251,7 +251,7 @@ public struct AuthenticateTOTPView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Two-Factor Authentication",
             subtitle: "Enter the code from your authenticator app."
@@ -315,7 +315,7 @@ public struct ReauthenticateTOTPView: View {
 
     private let client = AllAuthClient.shared
 
-    var body: some View {
+    public var body: some View {
         AuthForm(
             title: "Verify Your Identity",
             subtitle: "Enter the code from your authenticator app to continue."
@@ -362,7 +362,8 @@ public struct ReauthenticateTOTPView: View {
 public struct QRCodeView: View {
     let content: String
 
-    var body: some View {
+
+    public var body: some View {
         // Placeholder - in production, generate actual QR code
         // using CoreImage CIQRCodeGenerator or a library
         ZStack {
