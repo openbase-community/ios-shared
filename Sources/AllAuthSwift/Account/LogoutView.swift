@@ -13,6 +13,8 @@ public struct LogoutView: View {
 
     private let client = AllAuthClient.shared
 
+    public init() {}
+    
     public var body: some View {
         VStack(spacing: 24) {
             Image(systemName: "rectangle.portrait.and.arrow.right")

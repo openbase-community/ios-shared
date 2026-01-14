@@ -22,6 +22,8 @@ public struct SessionsView: View {
         sessions.filter { !$0["is_current"].boolValue }
     }
 
+    public init() {}
+
     public var body: some View {
         List {
             // Current session

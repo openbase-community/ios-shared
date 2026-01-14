@@ -8,11 +8,16 @@ public struct AllAuthRootView<AuthenticatedContent: View>: View {
     @StateObject private var navigationManager: AuthNavigationManager
 
     private let authenticatedContent: () -> AuthenticatedContent
+    private let onLoginShake: (() -> Void)?
 
-    public init(@ViewBuilder authenticatedContent: @escaping () -> AuthenticatedContent) {
+    public init(
+        onLoginShake: (() -> Void)? = nil,
+        @ViewBuilder authenticatedContent: @escaping () -> AuthenticatedContent
+    ) {
         let context = AuthContext.shared
         _navigationManager = StateObject(wrappedValue: AuthNavigationManager(authContext: context))
         self.authenticatedContent = authenticatedContent
+        self.onLoginShake = onLoginShake
     }
 
     public var body: some View {
@@ -23,7 +28,7 @@ public struct AllAuthRootView<AuthenticatedContent: View>: View {
                 authenticatedContent()
                     .environmentObject(navigationManager)
             } else {
-                AllAuthUnauthenticatedRootView()
+                AllAuthUnauthenticatedRootView(onLoginShake: onLoginShake)
             }
         }
         .environmentObject(navigationManager)
@@ -60,7 +65,11 @@ public struct AllAuthUnauthenticatedRootView: View {
     @EnvironmentObject var authContext: AuthContext
     @EnvironmentObject var navigationManager: AuthNavigationManager
 
-    public init() {}
+    private let onLoginShake: (() -> Void)?
+
+    public init(onLoginShake: (() -> Void)? = nil) {
+        self.onLoginShake = onLoginShake
+    }
 
     public var body: some View {
         NavigationStack(path: $navigationManager.path) {
@@ -86,7 +95,7 @@ public struct AllAuthUnauthenticatedRootView: View {
         } else if authContext.isPending(flow: .mfaTrust) {
             MFATrustDeviceView()
         } else {
-            LoginView()
+            LoginView(onShake: onLoginShake)
         }
     }
 
@@ -94,7 +103,7 @@ public struct AllAuthUnauthenticatedRootView: View {
     public func destinationView(for route: AuthRoute) -> some View {
         switch route {
         case .login:
-            LoginView()
+            LoginView(onShake: onLoginShake)
         case .signup:
             SignupView()
         case .verifyEmail:

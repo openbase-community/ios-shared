@@ -17,6 +17,8 @@ public struct ChangeEmailView: View {
 
     private let client = AllAuthClient.shared
 
+    public init() {}
+    
     public var body: some View {
         List {
             // Existing email addresses

@@ -22,6 +22,8 @@ public struct ChangePasswordView: View {
         return authContext.user?["has_usable_password"].bool ?? true
     }
 
+    public init() {}
+    
     public var body: some View {
         AuthForm(
             title: "Change Password",

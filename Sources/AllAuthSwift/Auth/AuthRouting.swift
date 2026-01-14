@@ -46,7 +46,6 @@ public class AuthNavigationManager: ObservableObject {
         case .loggedOut:
             // Navigate to login
             popToRoot()
-            navigate(to: .login)
 
         case .reauthenticated:
             // Successfully reauthenticated, return to previous flow
@@ -72,7 +71,8 @@ public class AuthNavigationManager: ObservableObject {
 
         for flow in flows {
             guard let flowId = flow["id"].string,
-                  let authFlow = AuthFlow(rawValue: flowId) else {
+                  let authFlow = AuthFlow(rawValue: flowId)
+            else {
                 continue
             }
 
@@ -155,8 +155,8 @@ public struct AuthRoutingContainer<AuthenticatedContent: View, AnonymousContent:
         @ViewBuilder anonymous: @escaping () -> AnonymousContent
     ) {
         _navigationManager = StateObject(wrappedValue: AuthNavigationManager(authContext: authContext))
-        self.authenticatedContent = authenticated
-        self.anonymousContent = anonymous
+        authenticatedContent = authenticated
+        anonymousContent = anonymous
     }
 
     public var body: some View {

@@ -21,6 +21,8 @@ public struct ManageProvidersView: View {
         }
     }
 
+    public init() {}
+
     public var body: some View {
         List {
             // Connected accounts

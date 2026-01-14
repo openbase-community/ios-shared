@@ -12,6 +12,8 @@ public struct MFAOverviewView: View {
 
     private let client = AllAuthClient.shared
 
+    public init() {}
+    
     var totpAuthenticator: JSON? {
         authenticators.first { $0["type"].string == AuthenticatorType.totp.rawValue }
     }
