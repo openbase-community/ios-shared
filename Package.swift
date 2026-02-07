@@ -2,9 +2,9 @@
 import PackageDescription
 
 let package = Package(
-    name: "ios-shared",
+    name: "OpenbaseShared",
     platforms: [
-        .iOS(.v17)
+        .iOS(.v17),
     ],
     products: [
         .library(

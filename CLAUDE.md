@@ -1,0 +1,1 @@
+This `ios-shared` project is a Swift package called AllAuthSwift that provides iOS authentication utilities for integrating with Django AllAuth backends.
